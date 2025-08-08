@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Study - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="dashboard-page">
+    <div class="header">
+      <div class="logo">
+        <span>📚</span>
+        <h1>Smart Study Dashboard</h1>
+      </div>
+      <button onclick="logout()" class="logout-btn">🚪 Logout</button>
+    </div>
+
+   
+
+    <div class="dashboard-container">
+      <div class="sidebar">
+        <div class="subject-selector">
+          <h3>📖 Select Subject</h3>
+          <div class="subject-grid">
+            <button
+              class="subject-btn active"
+              onclick="selectSubject('ICT')"
+              id="btn-ICT"
+            >
+              💻 ICT
+            </button>
+            <button
+              class="subject-btn"
+              onclick="selectSubject('Maths')"
+              id="btn-Maths"
+            >
+              🔢 Maths
+            </button>
+            <button
+              class="subject-btn"
+              onclick="selectSubject('English')"
+              id="btn-English"
+            >
+              📝 English
+            </button>
+            <button
+              class="subject-btn"
+              onclick="selectSubject('Science')"
+              id="btn-Science"
+            >
+              🔬 Science
+            </button>
+          </div>
+        </div>
+
+        <div class="notes-section">
+          <h3>📋 Your Study Notes</h3>
+          <textarea
+            id="studentNotes"
+            class="notes-textarea"
+            placeholder="Write your notes here... 📝"
+          ></textarea>
+          <button onclick="saveNotes()" class="save-btn">💾 Save Notes</button>
+          <p id="noteStatus" class="note-status"></p>
+        </div>
+
+        <div class="quote-section">
+          <h3>💡 Daily Inspiration</h3>
+          <div id="quote" class="quote-display">
+            Click below to get an inspirational quote!
+             <div id="quote">
+          <button onclick="loadQuote()">Get Inspirational Quote</button>
+    </div>
+          </div>
+          <button
+            onclick="loadQuote()"
+            class="save-btn"
+            style="
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              margin-top: 10px;
+            "
+          >
+            🌟 Get Quote
+          </button>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="quiz-section">
+          <h2>🎯 <span id="quizSubject">ICT</span> Quiz</h2>
+          <div id="quizContainer" class="quiz-card">
+            <!-- Quiz content will load here -->
+            <p style="text-align: center; color: #666; font-style: italic">
+              Loading quiz questions...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/auth.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/quizznotes.js"></script>
+    <script>
+      // Ensure user is logged in before accessing dashboard
+      ensureLoggedIn();
+
+      // Wait for DOM to be fully loaded before initializing quiz
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM loaded, initializing quiz...");
+        selectSubject("ICT");
+      });
+
+      // Fallback initialization
+      if (document.readyState === "complete") {
+        console.log("Document already loaded, initializing quiz...");
+        selectSubject("ICT");
+      }
+    </script>
+  </body>
+</html>
