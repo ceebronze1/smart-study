@@ -27,3 +27,4 @@ It provides features like subject-based quizzes, a notes section for students to
 
 ## PROJECT DONE BY CINDY AFIA FRIMPONG
 INDEX NUMBER: 1703071156.
+DIT GROUP B
