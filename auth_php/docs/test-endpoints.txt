@@ -1,0 +1,51 @@
+*Register
+- Url: /api/register.php
+- Method: POST
+- Content-Type: application/json
+- Request Body:
+    {
+      "full_name": "Jhay Codes",
+      "email": "jhay@gmail.com",
+      "password": "password"
+    }
+- Success Response:
+    {
+      "success": true,
+      "message": "Registration successful",
+      "data": {
+          "user": 1
+      }
+    }
+
+*Login
+- Url: /api/login.php
+- Method: POST
+- Content-Type: application/json
+- Request Body:
+    {
+      "email": "jhay@gmail.com",
+      "password": "password"
+    }
+- Success Response:
+    {
+      "success": true,
+      "message": "Login successful",
+      "data": {
+          "user": {
+              "id": 1,
+              "full_name": "Jhay Adams",
+              "email": "jhay@gmail.com",
+              "created_at": "2023-05-20 12:34:56"
+          }
+      }
+    }
+
+*Logout
+- Url: /api/logout.php
+- Method: POST
+- Requires: session
+- Success Response:
+    {
+      "success": true,
+      "message": "Logout successful"
+    }
