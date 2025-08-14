@@ -18,11 +18,11 @@ It provides features like subject-based quizzes, a notes section for students to
 - *HTML* – Structure of the app
 - *CSS* – Styling and layout
 - *JavaScript  – App logic and quiz handling
-- *Local Storage API* – To store user notes and quiz progress locally
+- *PHP for backend* – To store user notes and quiz progress locally
 
 ##  How to Run
-1. Clone the repository or download the ZIP file.
-2. Open index.html in your web browser.
+1. Download the ZIP file.
+2. Extract your files in vscode and run.
 3. Sign up for an account, log in, and start learning.
 
 ## PROJECT DONE BY CINDY AFIA FRIMPONG
